@@ -22,6 +22,8 @@ RUN apt-get --yes install wget xzdec && \
 # install custom packages
 # RUN tlmgr install genealogytree
 
+ENV DOCUMENT document.tex
+
 VOLUME /src
 WORKDIR /src
-CMD pdflatex /src/document.tex
+CMD pdflatex /src/${DOCUMENT}
